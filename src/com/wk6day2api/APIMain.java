@@ -11,6 +11,7 @@ public class APIMain {
 		
 //		Scanner in-take of user information
 		String userInput = null;
+//		Do-While controller boolean
 		boolean dbRun = true;
 		
 		do {
@@ -23,7 +24,8 @@ public class APIMain {
 				"Enter 'exit' to terminate the program.");
 		
 		userInput = scan.nextLine();
-		
+
+//		Switch statement for user selection
 		switch(userInput) {
 		case "1":
 			ImplementGet.getAndPrint();
