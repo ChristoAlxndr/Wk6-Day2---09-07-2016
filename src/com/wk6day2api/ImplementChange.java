@@ -77,7 +77,7 @@ public class ImplementChange {
 		URL localURLFirstName = new URL(endPoint + "?" + queryStringFirstName);
 		HttpURLConnection connectionFirstName = (HttpURLConnection)
 		localURLFirstName.openConnection();
-		connectionFirstName.setRequestMethod("POST");
+		connectionFirstName.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionFirstName.getResponseCode() != 201) {
@@ -96,7 +96,7 @@ public class ImplementChange {
 		URL localURLLastName = new URL(endPoint + "?" + queryStringLastName);
 		HttpURLConnection connectionLastName = (HttpURLConnection)
 		localURLLastName.openConnection();
-		connectionLastName.setRequestMethod("POST");
+		connectionLastName.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionLastName.getResponseCode() != 201) {
@@ -115,7 +115,7 @@ public class ImplementChange {
 		URL localURLEmail = new URL(endPoint + "?" + queryStringEmail);
 		HttpURLConnection connectionEmail = (HttpURLConnection)
 		localURLEmail.openConnection();
-		connectionEmail.setRequestMethod("POST");
+		connectionEmail.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionEmail.getResponseCode() != 201) {
@@ -134,7 +134,7 @@ public class ImplementChange {
 		URL localURLHomePhone = new URL(endPoint + "?" + queryStringHomePhone);
 		HttpURLConnection connectionHomePhone = (HttpURLConnection)
 		localURLHomePhone.openConnection();
-		connectionHomePhone.setRequestMethod("POST");
+		connectionHomePhone.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionHomePhone.getResponseCode() != 201) {
@@ -153,7 +153,7 @@ public class ImplementChange {
 		URL localURLCellPhone = new URL(endPoint + "?" + queryStringCellPhone);
 		HttpURLConnection connectionCellPhone = (HttpURLConnection)
 		localURLCellPhone.openConnection();
-		connectionCellPhone.setRequestMethod("POST");
+		connectionCellPhone.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionCellPhone.getResponseCode() != 201) {
@@ -175,7 +175,7 @@ public class ImplementChange {
 		URL localURLPassword = new URL(endPoint + "?" + queryStringPassword);
 		HttpURLConnection connectionPassword = (HttpURLConnection)
 		localURLPassword.openConnection();
-		connectionPassword.setRequestMethod("POST");
+		connectionPassword.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionPassword.getResponseCode() != 201) {
@@ -196,7 +196,7 @@ public class ImplementChange {
 		URL localURLActiveStatus = new URL(endPoint + "?" + queryStringActiveStatus);
 		HttpURLConnection connectionActiveStatus = (HttpURLConnection)
 		localURLActiveStatus.openConnection();
-		connectionActiveStatus.setRequestMethod("POST");
+		connectionActiveStatus.setRequestMethod("PUT");
 		
 //		if we did not get a 201 (success) throw an exception
 		if(connectionActiveStatus.getResponseCode() != 201) {
