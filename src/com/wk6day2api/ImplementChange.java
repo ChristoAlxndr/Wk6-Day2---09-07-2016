@@ -44,11 +44,15 @@ public class ImplementChange {
 	public static void putAndPrint() {
 		
 		Scanner scan = new Scanner(System.in);
+		
+//		Instantiation of variables for use in the method
 		String userInput = null;
 		boolean updateContinue = true;
 	
+//	Try & Catch statement for the method
 	try {
-		
+	
+//	Do-while loop allowing users to make changes to multiple aspects of an employee's data until the user chooses to exit.
 	do {
 		
 	System.out.println("Please select the employee field to update. \n" +
@@ -68,30 +72,95 @@ public class ImplementChange {
 		System.out.println("What is the employee's first name?");
 		firstName = scan.nextLine();
 		String queryStringFirstName = String.format("firstName=%s/", URLEncoder.encode(firstName, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLFirstName = new URL(endPoint + "?" + queryStringFirstName);
+		HttpURLConnection connectionFirstName = (HttpURLConnection)
+		localURLFirstName.openConnection();
+		connectionFirstName.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionFirstName.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionFirstName.getResponseMessage());
+		}
+		connectionFirstName.disconnect();
 		break;
 	
 	case "2":
 		System.out.println("What is the employee's last name?");
 		lastName = scan.nextLine();
-		String queryStringLastName = String.format("lastName=%s", URLEncoder.encode(firstName, charset));
+		String queryStringLastName = String.format("lastName=%s", URLEncoder.encode(lastName, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLLastName = new URL(endPoint + "?" + queryStringLastName);
+		HttpURLConnection connectionLastName = (HttpURLConnection)
+		localURLLastName.openConnection();
+		connectionLastName.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionLastName.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionLastName.getResponseMessage());
+		}
+		connectionLastName.disconnect();
 		break;
 		
 	case "3":
 		System.out.println("What is the employee's email address?");
 		email = scan.nextLine();
-		String queryStringEmail = String.format("email=%s", URLEncoder.encode(firstName, charset));
+		String queryStringEmail = String.format("email=%s", URLEncoder.encode(email, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLEmail = new URL(endPoint + "?" + queryStringEmail);
+		HttpURLConnection connectionEmail = (HttpURLConnection)
+		localURLEmail.openConnection();
+		connectionEmail.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionEmail.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionEmail.getResponseMessage());
+		}
+		connectionEmail.disconnect();
 		break;
 		
 	case "4":
 		System.out.println("What is the employee's home phone?");
 		homePhone = scan.nextLine();
-		String queryStringHomePhone = String.format("homePhone=%s", URLEncoder.encode(firstName, charset));
+		String queryStringHomePhone = String.format("homePhone=%s", URLEncoder.encode(homePhone, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLHomePhone = new URL(endPoint + "?" + queryStringHomePhone);
+		HttpURLConnection connectionHomePhone = (HttpURLConnection)
+		localURLHomePhone.openConnection();
+		connectionHomePhone.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionHomePhone.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionHomePhone.getResponseMessage());
+		}
+		connectionHomePhone.disconnect();
 		break;
 	
 	case "5":
 		System.out.println("What is the employee's cell phone?");
 		cellPhone = scan.nextLine();
-		String queryStringCellPhone = String.format("cellPhone=%s", URLEncoder.encode(firstName, charset));
+		String queryStringCellPhone = String.format("cellPhone=%s", URLEncoder.encode(cellPhone, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLCellPhone = new URL(endPoint + "?" + queryStringCellPhone);
+		HttpURLConnection connectionCellPhone = (HttpURLConnection)
+		localURLCellPhone.openConnection();
+		connectionCellPhone.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionCellPhone.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionCellPhone.getResponseMessage());
+		}
+		connectionCellPhone.disconnect();
 		break;
 		
 	case "6":
@@ -100,7 +169,20 @@ public class ImplementChange {
 			"Password must contain at least 1 upper and 1 lower case letter. \n" +
 			"Password must contain at least 1 number.");
 		password = scan.nextLine();
-		String queryStringPassword = String.format("password=%s", URLEncoder.encode(firstName, charset));
+		String queryStringPassword = String.format("password=%s", URLEncoder.encode(password, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLPassword = new URL(endPoint + "?" + queryStringPassword);
+		HttpURLConnection connectionPassword = (HttpURLConnection)
+		localURLPassword.openConnection();
+		connectionPassword.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionPassword.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionPassword.getResponseMessage());
+		}
+		connectionPassword.disconnect();
 		break;
 		
 	case "7":
@@ -108,7 +190,20 @@ public class ImplementChange {
 			"Enter '1' if the employee is CURRENTLY active. \n" +
 			"Enter '0' if the employee is currently INACTIVE.");
 		activeCode = scan.nextLine();
-		String queryStringActiveStatus = String.format("active=%s", URLEncoder.encode(firstName, charset));
+		String queryStringActiveStatus = String.format("active=%s", URLEncoder.encode(activeCode, charset));
+		
+//		Creates a new URL out of the end-point, returnType, and queryString
+		URL localURLActiveStatus = new URL(endPoint + "?" + queryStringActiveStatus);
+		HttpURLConnection connectionActiveStatus = (HttpURLConnection)
+		localURLActiveStatus.openConnection();
+		connectionActiveStatus.setRequestMethod("POST");
+		
+//		if we did not get a 201 (success) throw an exception
+		if(connectionActiveStatus.getResponseCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : " +
+			connectionActiveStatus.getResponseMessage());
+		}
+		connectionActiveStatus.disconnect();
 		break;
 		
 	case "exit":
@@ -121,33 +216,6 @@ public class ImplementChange {
 	
 	} while (updateContinue);
 	
-	
-//	Creates the URL parameters as a string encoding them with
-//	defined charset
-	String queryString = String.format("firstName=%s&lastName=%s&email=%s&homePhone=%s&cellPhone=%s&password=%s&active=%s/",
-		URLEncoder.encode(firstName, charset),
-		URLEncoder.encode(lastName, charset),
-		URLEncoder.encode(email, charset),
-		URLEncoder.encode(homePhone, charset),
-		URLEncoder.encode(cellPhone, charset),
-		URLEncoder.encode(password, charset),
-		URLEncoder.encode(activeCode, charset));
-	
-//	Creates a new URL out of the end-point, returnType, and queryString
-	URL localURL = new URL(endPoint + "?" + queryString);
-	
-	System.out.println(endPoint + queryString);
-	
-	HttpURLConnection connection = (HttpURLConnection)
-	localURL.openConnection();
-	connection.setRequestMethod("POST");
-	
-//	if we did not get a 201 (success) throw an exception
-	if(connection.getResponseCode() != 201) {
-		throw new RuntimeException("Failed : HTTP error code : " +
-		connection.getResponseMessage());
-	}
-
 	
 	ImplementGet.getAndPrint();
 	

@@ -38,10 +38,12 @@ public class APIMain {
 			ImplementDelete.deleteAndPrint();
 			break;
 		case "exit":
+			System.out.println("Thank you for using the employee Database.");
 			dbRun = false;
 			break;
 		default:
-			System.out.println("Invalid selection.  Please option 1 - 4.");
+			System.out.println("Invalid selection.  Please enter an option from 1 - 4, \n" +
+					"or enter 'exit'. \n\n");
 			break;
 		} 
 		

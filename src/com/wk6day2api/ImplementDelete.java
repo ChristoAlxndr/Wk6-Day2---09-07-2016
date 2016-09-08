@@ -32,6 +32,7 @@ public class ImplementDelete {
 	System.out.println("What is the employee's ID number for deletion?");
 	id = scan.nextLine();
 	
+//	Encodes and formats the variable for addition to the URL
 	String queryString = String.format(id, URLEncoder.encode(id, charset));
 	
 

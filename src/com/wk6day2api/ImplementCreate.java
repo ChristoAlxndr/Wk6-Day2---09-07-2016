@@ -84,19 +84,16 @@ public class ImplementCreate {
 		URLEncoder.encode(activeCode, charset));
 	
 //	Creates a new URL out of the end-point, returnType, and queryString
-	URL localURL = new URL(endPoint + "?" + queryString);
-	
-	System.out.println(endPoint + queryString);
-	
+	URL localURL = new URL(endPoint + "?" + queryString);	
 	HttpURLConnection connection = (HttpURLConnection)
 	localURL.openConnection();
 	connection.setRequestMethod("POST");
 	
-//	if we did not get a 201 (success) throw an exception
-	if(connection.getResponseCode() != 201) {
-		throw new RuntimeException("Failed : HTTP error code : " +
-		connection.getResponseMessage());
-	}
+////	if we did not get a 201 (success) throw an exception
+//	if(connection.getResponseCode() != 201) {
+//		throw new RuntimeException("Failed : HTTP error code : " +
+//		connection.getResponseMessage());
+//	}
 
 	
 	ImplementGet.getAndPrint();
